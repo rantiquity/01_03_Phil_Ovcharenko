@@ -14,7 +14,20 @@ meta |>
   # ваш код здесь 
   # поверните координатную ось; 
   # ваш код здесь
-  # поменяйте тему оформления на черно-белую (bw) 
+  # поменяйте тему оформления на черно-белую (bw)
+meta |> 
+g <- ggplot(aes(
+  x = Topic,
+  fill = Genre
+)) +
+  geom_bar(position = "fill") +
+  labs(
+    x = NULL,
+    y = NULL,
+    title = "Old French Data"
+  ) +
+  coord_flip() +
+  theme_bw()
 
 # !!!! сохраните график как объект в окружении под именем g
 # !!!!вызов class(g) должен возвращать "gg"     "ggplot"
